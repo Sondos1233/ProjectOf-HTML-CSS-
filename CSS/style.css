@@ -1,0 +1,789 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.card {
+    background-color: rgba(255, 255, 255);
+}
+
+.clear {
+    clear: both;
+}
+
+a {
+    text-decoration: none;
+    color: black
+}
+
+ul {
+    list-style-type: none;
+}
+
+.line {
+    display: block;
+    width: 62px;
+    height: 4px;
+    background-color: #e32207;
+    margin: 0 auto 70px auto;
+}
+
+
+.header {
+    background-color: rgba(255, 255, 255);
+    width: 100%;
+    height: 40px;
+    position: fixed;
+    z-index: 1000;
+    box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
+    /* opacity: 0.9; */
+}
+
+.header .container .logo {
+    float: left;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+}
+
+.header .container .nav {
+    float: right;
+}
+
+.header .container .nav ul li {
+    display: inline-block;
+    padding: 10px 0;
+    margin: 0 16px;
+}
+
+.header .container .nav ul li a {
+    font-size: 17px;
+    font-weight: 600;
+    color: black;
+}
+
+.header .container .nav ul li a::after {
+    content: "";
+    width: 0px;
+    height: 3px;
+    display: block;
+    background-color: #e32207;
+    margin-top: 2px;
+    transition: .5s;
+}
+
+.header .container .nav ul li a:hover::after {
+    width: 100%;
+}
+
+.header .container .nav ul li a.active::after {
+    content: "";
+    width: 100%;
+    height: 3px;
+    display: block;
+    background-color: #e32207;
+    margin-top: 2px;
+}
+
+.home {
+    height: 100vh;
+    background-image: url("../images/landing-bg-dishes-min.jpg");
+    background-size: cover;
+    position: relative;
+}
+
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.home-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 65%;
+}
+
+.home-content h1 {
+    color: #fff;
+    font-size: 50px;
+    text-transform: uppercase;
+}
+
+.home-content p {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: blanchedalmond;
+    letter-spacing: 1.5px;
+    line-height: 1.6px;
+}
+
+button {
+    min-width: 150px;
+    padding: 15px 0;
+    border-radius: 5px;
+    border: 0;
+    cursor: pointer;
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+.home-content button.start {
+    background-color: white;
+    color: green;
+    margin-right: 10px;
+}
+
+.home-content button.more {
+    background-color: #e32207;
+    color: white;
+}
+
+.home-content button:hover {
+    opacity: 0.7;
+}
+
+.home .home-bottom {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    padding: 12px 24px;
+    color: #e32207;
+    opacity: 0.7;
+    font-weight: 400;
+    font-size: 20px;
+    margin: 10px 0;
+    letter-spacing: 5px
+}
+
+.padding {
+    padding: 100px 0;
+}
+
+.about {
+    text-align: center;
+}
+
+.about h2.about-title {
+    font-size: 35px;
+    text-transform: capitalize;
+    margin-bottom: 9px;
+    margin-top: 6px;
+}
+
+.about .about-content {
+    height: 350px;
+    overflow: hidden;
+}
+
+.about .about-item,
+.offer .offer-item {
+    position: relative;
+    width: 30%;
+    float: left;
+    border: 1px solid rgb(177, 177, 177);
+    padding: 30px 15px;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+}
+
+.about .about-item {
+    text-align: center;
+}
+.about .about-item i{
+    color: green;
+    margin-bottom: 15px;
+    font-size: 1.8em;
+}
+.about h2 {
+    text-transform: capitalize;
+    margin-bottom: 15px;
+}
+
+.about p {
+    letter-spacing: 2px;
+    line-height: 22px;
+    margin-bottom: 15px;
+    color: #899;
+}
+
+.about a {
+    color: green;
+    text-transform: capitalize
+}
+
+.item-center {
+    margin: 0 5%;
+}
+
+.about .about-item::after,
+.offer .offer-item::after {
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 0;
+    top: 0;
+    left: 0;
+    background-color: #333;
+    border-radius: 8px;
+    transition: 0.5s;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+}
+
+.about .about-item:hover::after,
+.offer .offer-item:hover::after {
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.about .about-item:hover h2,
+.offer .offer-item:hover h2 {
+    color: white;
+    transition: 1s;
+    -webkit-transition: 1s;
+    -moz-transition: 1s;
+    -ms-transition: 1s;
+    -o-transition: 1s;
+}
+
+.foods {
+    background-color: #e8e8e8;
+}
+
+.foods-content {
+    overflow: hidden;
+}
+
+.foods-content .foods-item {
+    width: 30%;
+    float: left;
+    margin-bottom: 20px;
+    position: relative;
+    padding: 20px;
+
+}
+
+.foods-content .foods-item img {
+    width: 100%;
+    height: 300px;
+}
+
+.foods-content .foods-item .overlay-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s;
+}
+
+.foods-content .foods-item:hover .overlay-item {
+    opacity: 1;
+    visibility: visible;
+}
+
+.foods-content .foods-item .overlay-item .overlay-content {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 80%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.foods-content .foods-item .overlay-item span.category {
+    color: #e32207;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 5px;
+    position: relative;
+    top: 15px;
+    opacity: 0;
+    visibility: hidden;
+    transition: top 1s, opacity .5s;
+}
+
+.foods-content .foods-item .overlay-item h3.overlay-title {
+    font-size: 20px;
+    color: #fff;
+    margin-bottom: 10px;
+    position: relative;
+    top: 15px;
+    opacity: 0;
+    visibility: hidden;
+    transition: top 1s, opacity .5s;
+    transition-delay: .4s;
+}
+
+.foods-content .foods-item .overlay-item a {
+    color: white;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-color: #e32207;
+    position: relative;
+    top: 15px;
+    opacity: 0;
+    visibility: hidden;
+    transition: top 1s, opacity .5s;
+    transition-delay: .6s;
+}
+
+.foods-content .foods-item:hover span.category,
+.foods-content .foods-item:hover h3.overlay-title,
+.foods-content .foods-item:hover .overlay-item a {
+    top: 0;
+    opacity: 1;
+    visibility: visible;
+}
+
+.offer img {
+    width: 60px;
+    height: 40px;
+}
+
+.offer .offer-item {
+    text-align: left;
+    position: relative;
+    padding: 30px 15px 30px 70px;
+    margin-bottom: 20px;
+}
+
+.offer-item .picture {
+    position: absolute;
+    left: 10px;
+    top: 30px;
+    color: #6195ff;
+}
+
+.offer-item h3 {
+    text-transform: capitalize;
+    margin-bottom: 15px;
+    transition: 1s;
+}
+
+.offer-item p {
+    text-transform: capitalize;
+    margin-bottom: 15px;
+    line-height: 1.6;
+    color: #999;
+}
+
+.service {
+    background-color: #f9f9f9;
+}
+
+.service .service-item {
+    width: 45%;
+    float: left;
+}
+
+.service .service-content .service-item .service-header .line {
+    margin: 0 0 45px 0;
+}
+
+.service .service-content .service-item p {
+    padding-right: 20px;
+    color: #999;
+    line-height: 1.4;
+    font-size: 18px;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+.service .service-content .service-item li {
+    margin-bottom: 13px;
+    color: #999;
+}
+
+.service .service-content .service-item {
+    margin-right: 5%;
+}
+
+.service .service-content .service-item .service-pic img {
+    width: 100%;
+}
+
+.service .service-content .service-item .service-bull {
+    text-align: center;
+}
+
+.service .service-content .service-item .service-bull ul li {
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    background-color: #a8a8a8;
+    margin: 10px 5px;
+    border-radius: 50%;
+}
+
+.service .service-content .service-item .service-bull ul li:hover,
+.service .service-content .service-item .service-bull ul li.active {
+    background-color: green;
+}
+
+.numbers {
+    position: relative;
+    background-image: url(../images/coffeehouse2.jpg);
+    height: 300px;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.numbers .number-content {
+    overflow: hidden;
+    padding-top: 130px;
+}
+
+.numbers .number-content .number-item {
+    width: 25%;
+    float: left;
+    text-align: center;
+}
+.numbers .number-content .number-item i{
+    color: #e32207;
+    margin-bottom: 15px;
+    font-size: 2em;
+}
+
+.numbers .number-content .number-item h3 {
+    font-weight: bold;
+    font-size: 30px;
+    color: #fff;
+}
+
+.numbers .number-content .number-item p {
+    color: whitesmoke;
+}
+.pricing{
+    background-color: #e8e8e8;
+}
+
+.pricing-content {
+    overflow: hidden;
+}
+
+.pricing-content .pricing-item {
+    position: relative;
+    float: left;
+    width: 30%;
+    padding: 30px 15px;
+    text-align: center;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+}
+
+.pricing .pricing-item .meal-title {
+    color: rgb(88, 88, 88);
+    font-weight: bold;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+.pricing .pricing-item .price {
+    width: 100px;
+    height: 100px;
+    padding: 12px 0;
+    margin: 20px auto;
+    border: 2px solid #e32207;
+    border-radius: 50%;
+    background-image: url(../images/tablesetting2.jpg);
+}
+
+.padding .pricing-item .price h3 {
+    font-size: 50px;
+}
+
+.padding .pricing-item .price span {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.pricing .pricing-item ul li {
+    color: #999;
+    line-height: 1.8;
+}
+
+.pricing .pricing-item button {
+    background-color: #e32207;
+    padding: 6px 2px;
+    color: white;
+    opacity: 1;
+}
+
+.pricing .pricing-item button:hover {
+    opacity: 0.8;
+}
+
+.pricing .pricing-item::after {
+    border-radius: 8px;
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 0;
+    top: 0;
+    left: 0;
+    background-color: #0b0c0c;
+    transition: .5s;
+    opacity: .5;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+}
+
+.pricing .pricing-item:hover::after {
+    height: 100%;
+}
+
+.pricing .pricing-item:hover .price h3,
+.pricing .pricing-item:hover .price span,
+.pricing .pricing-item:hover .meal-title {
+    color: #e32207;
+}
+.foodMan{
+    position: relative;
+    background-image: url(../images/coffeehouse.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    height: 350px;
+}
+.foodMan .foodMan-content{
+    overflow: hidden;
+}
+.foodMan .foodMan-item{
+    float: left;
+    width: 50%;
+    color: #fff;
+    padding-right: 20px;
+    padding-top: 55px;
+    margin-bottom: 110px;
+}
+.foodMan .foodMan-item .foodMan-menItem{
+    padding: 90px 20px 10px 280px;
+    position: relative;
+    line-height: 1.4;
+    margin-bottom: 20px;
+}
+.foodMan .foodMan-item .foodMan-menItem img{
+    position: absolute;
+    top: 82px;
+    left: 200px;
+    border-radius: 50%;
+}
+.foodMan .foodMan-item .foodMan-menItem span{
+     color: green;
+}
+.foodMan .foodMan-item p{
+    text-transform: capitalize;
+    line-height: 1.5;
+    margin-left: 76px;
+    font-size: 14px;
+    padding-left: 130px;
+    width: 70%;
+}
+.team .team-content{
+    overflow: hidden;
+    padding-left: 70px;
+}
+.team .team-content .team-item{
+    display: block;
+    float: left;
+    width: 28%;
+    background-color: #d1caca;
+    padding: 17px 13px;
+    text-align: center;
+    position: relative;
+}
+.team .team-content .team-item .team-img{
+    width: 90%;
+    margin: auto;
+    position: relative;
+}
+.team .team-content .team-item .team-img img{
+    width: 100%;
+    height: 185px;
+}
+.overlay-team{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, .5);
+    visibility: hidden;
+    opacity: 0;
+}
+.team-item:hover .overlay-team{
+    visibility: visible;
+    opacity: 1;
+
+}
+.overlay-team a{
+    display: block;
+    width: 40px;
+    height: 40px;
+    background-color: #e32207;
+    color: #fff;
+    margin-left: auto;
+}
+.overlay-team a i{
+    line-height: 40px;
+}
+.team-item .team-info h3{
+    color: #222;
+    padding: 10px 0;
+}
+.team-item .team-info span{
+    color: #999;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+.team-item::after{
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 0;
+    top: 0;
+    left: 0;
+    background-color: #333;
+    opacity: 0;
+}
+.team-item:hover:after{
+    width: 100%;
+    height: 100%;
+    opacity:.4;
+    transition: 1s;
+}
+.team-item:hover .team-info h3{
+    color:#fff;
+    transition:  .5s;
+}
+.team-item:hover .team-info span{
+    color: #e32207;
+    transition: 1s;
+}
+.newRes .newRes-content{
+    overflow: hidden;
+    background-color: #f8f8f8;
+    text-align: left;
+}
+.newRes .newRes-content .newRes-item{
+    float: left;
+    width: 30%;
+    background-color: #fff;
+    position: relative;
+}
+.newRes .newRes-content .newRes-item::after{
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 0;
+    top: 0;
+    left: 0;
+    transition: 1s;
+    opacity: 0;
+    background-color: green;
+}
+.newRes .newRes-content .newRes-item:hover::after{
+    height: 100%;
+    opacity: 0.1;
+}
+.newRes .newRes-content .newRes-item .newRes-img{
+    width: 100%;
+   
+    
+}
+.newRes .newRes-content .newRes-item .newRes-img img{
+  width: 65%;
+  height: 280px;
+  margin-left: 26px;
+
+}
+.newRes .newRes-content .newRes-item .newRes-info{
+    padding: 26px ;
+}
+
+.newRes .newRes-content .newRes-item .newRes-info ul li{
+    display: inline-block;
+    font-size: 12px;
+    margin: 0 5px;
+}
+.newRes .newRes-content .newRes-item .newRes-info ul li i{
+    color: green;
+    margin-right: 2px;
+}
+.newRes .newRes-content .newRes-item .newRes-info h3{
+    font-weight: bold;
+    margin: 20px 0;
+    margin-bottom: 25px
+}
+.newRes .newRes-content .newRes-item .newRes-info p{
+    color: #999;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.footer{
+    background-color: #e8e8e8;
+    text-align: center;
+    height: 300px;
+    padding: 60px 0;
+}
+.footer ul{
+    margin: 20px 0;
+}
+.footer ul li{
+    display: inline-block;
+    background-color: #e32207;
+    width: 50px;
+    height: 50px;
+    position: relative;
+    z-index: 1;
+    border-radius: 50%;
+}
+.footer ul li a{
+    display: block;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    line-height: 50px;
+    padding-right: 15px;
+    font-size: 23px;
+    margin: 0 8px;
+}
+.footer p{
+    color: #999;
+    font-size: 12px;
+    text-transform: uppercase;
+}
