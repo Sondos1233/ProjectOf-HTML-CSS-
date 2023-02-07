@@ -362,7 +362,9 @@ button {
     opacity: 1;
     visibility: visible;
 }
-
+.foods-item i{
+    line-height: 40px;
+}
 .offer img {
     width: 60px;
     height: 40px;
